@@ -2,7 +2,7 @@
  * @Author: zong.wang01@hand-china.com
  * @Date: 2021-04-04 10:06:10
  * @LastEditors: zong.wang01@hand-china.com
- * @LastEditTime: 2021-04-04 12:58:00
+ * @LastEditTime: 2021-04-23 22:22:02
  * @Version: 1.0.0
  * @Description: 
  * @Copyright: Copyright (c) 2021, Hand-RongJing
@@ -15,6 +15,10 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 module.exports = {
  entry: path.join(__dirname, "examples/src/index.js"),
+ output: {
+  path: path.join(__dirname, "examples/dist"),
+  filename: "bundle.js"
+ },
  module: {
    rules: [{
      test: /\.(js|jsx)$/,
