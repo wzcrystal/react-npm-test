@@ -2,7 +2,7 @@
  * @Author: zong.wang01@hand-china.com
  * @Date: 2021-04-04 10:06:10
  * @LastEditors: zong.wang01@hand-china.com
- * @LastEditTime: 2021-04-23 22:22:02
+ * @LastEditTime: 2021-04-27 22:28:56
  * @Version: 1.0.0
  * @Description: 
  * @Copyright: Copyright (c) 2021, Hand-RongJing
@@ -20,14 +20,45 @@ module.exports = {
   filename: "bundle.js"
  },
  module: {
-   rules: [{
+  rules: [{
      test: /\.(js|jsx)$/,
-   use: "babel-loader",
-   exclude: /node_modules/
- },{
-   test: /\.css$/,
-   use: ["style-loader", "css-loader"]
- }]
+    use: "babel-loader",
+    exclude: /node_modules/
+  },{
+    test: /\.css$/,
+    use: ["style-loader", "css-loader"]
+  },{
+    test: /\.less$/,
+    use: ['style-loader',
+      {
+          loader: 'css-loader',
+          options: {
+              //支持@important引入css
+              importLoaders: 1
+          }
+      },
+      {
+          loader: 'postcss-loader',
+          // options: {
+          //     plugins: function() {
+          //         return [
+          //             //一定要写在require("autoprefixer")前面，否则require("autoprefixer")无效
+          //             require('postcss-import')(),
+          //             require("autoprefixer")({
+          //                 "browsers": ["Android >= 4.1", "iOS >= 7.0", "ie >= 8"]
+          //             })
+          //         ]
+          //     }
+          // }
+      },
+      {
+        loader: "less-loader",
+        options: {
+            javascriptEnabled: true
+        }
+      }
+    ]
+  }]
 },
  plugins: [htmlWebpackPlugin],
  resolve: {

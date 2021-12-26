@@ -1,15 +1,26 @@
 /*
  * @Author: zong.wang01@hand-china.com
- * @Date: 2021-04-04 10:02:14
+ * @Date: 2021-04-26 15:27:52
  * @LastEditors: zong.wang01@hand-china.com
- * @LastEditTime: 2021-04-18 20:05:17
+ * @LastEditTime: 2021-04-26 15:28:31
  * @Version: 1.0.0
  * @Description: 
  * @Copyright: Copyright (c) 2021, Hand-RongJing
  */
-import React from 'react';
-// import './styles.css';
-const MyComponent = () => (
- <h1>我的第一个react组件</h1>
-);
-export default MyComponent;
+import {
+  PageHeader,
+  PageLoading,
+  Ellipsis,
+  NumberInfo,
+  Exception
+} from './components'
+import MyComponent from './my-component'
+
+export {
+  PageHeader,
+  PageLoading,
+  Ellipsis,
+  NumberInfo,
+  Exception,
+  MyComponent
+}

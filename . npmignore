@@ -1,5 +1,8 @@
-src
-examples
-.babelrc
-.gitignore
-webpack.config.js
+./src
+./examples
+./.babelrc
+./.gitignore
+./webpack.config.js
+./postcss.config.js
+./yarn-error.log
+./yarn.lock
